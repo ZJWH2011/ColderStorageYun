@@ -7,6 +7,7 @@ import com.example.demo.service.ColderStorageInService;
 import com.example.demo.service.ColderStorageOutService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,12 +18,12 @@ import java.util.List;
 public class ColderStorageInController {
 
     @Autowired
-    private ColderStorageInService service;
+    private ColderStorageInService colderStorageInService;
 
-    @RequestMapping("/get")
+    @RequestMapping(value = "/get",method = RequestMethod.GET)
     @ResponseBody
     public List<ColderStorageIn> get()
     {
-        return service.getColderStorageInRecord();
+        return colderStorageInService.getColderStorageInRecord();
     }
 }

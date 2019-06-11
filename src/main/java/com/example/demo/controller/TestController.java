@@ -35,7 +35,7 @@ public class TestController {
         return JSONObject.toJSONString(recod);
     }
 
-    @RequestMapping("/get")
+    @RequestMapping(value = "/get",method = RequestMethod.GET)
     @ResponseBody
     public List<ErrorRecord> get()
     {
