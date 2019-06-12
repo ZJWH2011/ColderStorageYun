@@ -1,12 +1,8 @@
 package com.example.demo.controller;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.example.demo.entity.ErrorRecord;
-import com.example.demo.service.ErrorCodeService;
-import com.example.demo.userface.UserFaceDef;
-import jdk.nashorn.internal.ir.RuntimeNode;
-import org.mybatis.spring.annotation.MapperScan;
+import com.example.demo.userface.ErrorCodeBLL;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -15,11 +11,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/errorcode")
-@MapperScan("com.example.demo.service")
-public class TestController {
+public class ErrorCodeController {
 
     @Autowired
-    private UserFaceDef errorCodeService;
+    private ErrorCodeBLL errorCodeService;
 
     @RequestMapping("/me")
     public String getMe() {

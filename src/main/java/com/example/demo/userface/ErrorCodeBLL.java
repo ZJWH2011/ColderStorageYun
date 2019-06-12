@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-public interface UserFaceDef {
+public interface ErrorCodeBLL {
     List<ErrorRecord> getErrorRecord();
     void insertErrorRecord(ErrorRecord data);
     void testAOP();
